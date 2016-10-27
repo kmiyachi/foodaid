@@ -1,17 +1,50 @@
 body {
-	margin: 0;
-	padding: 0;
+	margin-bottom: 10px;
+}
+
+.navbar-nav {
 	text-align: center;
 }
 
-/* Header */
-.jumbotron {
-	background-color: rgba(255, 50, 0, 0.8);
+#btn-logout {
+	width: 90%;
+}
+
+.row {
+	margin-top: 10px;
+}
+
+.thumbnail {
+	text-align: center;
+}
+
+.module {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/food-bread.jpg");
+	background-size: cover;
+	width: 100%;
+	height: 200px;
+	position: relative;
+	float: left;
+	margin: 5px 0;
+}
+
+.mid h2 {
 	color: white;
-	text-align: center;
+	font-variant: small-caps;
 	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 2rem;
+	transform: translate(-50%, -50%);
 }
 
-.main-tabs {
-	text-align: center;
+.mid p {
+	color: white;
+	font-weight: 100;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }

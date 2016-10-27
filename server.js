@@ -5,11 +5,18 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');
 
-// routes
+// Routes
 var index = require('./routes/index');
-var retailerHome = require('./routes/retailer/home');
+
+//Customer Routes
 var customerHome = require('./routes/customer/home');
 var customerDeal = require('./routes/customer/deal');
+
+
+//Retailer Routes
+var retailerHome = require('./routes/retailer/home');
+var retailerOptions = require('./routes/retailer/options');
+var retailerInfo = require('./routes/retailer/info');
 
 
 // express variable
@@ -24,9 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add routes here
 app.get('/', index.view);
-app.get('/retailer/home', retailerHome.view);
+
 app.get('/customer/home', customerHome.view);
 app.get('/customer/deal',customerDeal.view);
+
+//Add Retailer Infor
+app.get('/retailer/home', retailerHome.view);
+app.get('/retailer/info',retailerInfo.view);
+app.get('/retailer/options',retailerOptions.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

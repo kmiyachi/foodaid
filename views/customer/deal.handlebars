@@ -2,12 +2,14 @@
 
 <html>
 <head>
-	<title>CSE170 Project</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/main.css" rel="stylesheet">
+    <title>Food Description</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/customer/deal.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -21,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">FoodAid</a>
+            <a class="navbar-brand" id="back" href="../">Back</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,19 +38,28 @@
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>
-
 <div class="container">
-    <a href="customer/home">
-        customer
-    </a>
-    <a href="retailer/home">
-        retailer
-    </a>
+    <div class = "row">
+        <h1>9777 Genessee Avenue </h1></div>
+    <hr>
+    <div class = "row"><div class="col-sm-12 "> <h2>Panera Bread </h2></div></div>
+    <div class = "left">
+        <div class = "row">
+            <div class="col-sm-12"><img class="img-rounded" width="40%" height="40%" alt="" border='3' src="../images/food-bread.jpg"></div></div>
+
+        <div class = "row"><div class="col-sm-12"><h4>Sourdough Bread - $2.99/loaf</h4></div></div>
+
+        <div class = "row"><div class="col-sm-12"><h4>Estimated Delivery: 17 Minutes</h4></div></div>
+
+        <div class = "row"><div class="col-sm-12"><h4>Quantity:  </h4>
+            <input type="number" name="quantity"
+                   min="0" max="100" step="1" value="1"></div></div>
+
+        <br>
+        <button class = "button"> Tap Me! </button>
+    </div>
 </div>
-
-
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-
 </body>
 </html>

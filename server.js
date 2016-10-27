@@ -9,6 +9,8 @@ var handlebars = require('express3-handlebars');
 var index = require('./routes/index');
 var costumer = require('./routes/costumer');
 var retailer = require('./routes/retailer');
+var customer = require('./routes/customer');
+
 
 // express variable
 var app = express();
@@ -24,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', index.view);
 app.get('/costumer', costumer.view)
 app.get('/retailer', retailer.view)
+app.get('/customer', customer.view)
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

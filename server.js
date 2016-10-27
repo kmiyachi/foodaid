@@ -7,7 +7,6 @@ var handlebars = require('express3-handlebars');
 
 // routes
 var index = require('./routes/index');
-var costumer = require('./routes/costumer');
 var retailer = require('./routes/retailer');
 var customer = require('./routes/customer');
 
@@ -24,9 +23,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add routes here
 app.get('/', index.view);
-app.get('/costumer', costumer.view)
-app.get('/retailer', retailer.view)
-app.get('/customer', customer.view)
+app.get('/retailer', retailer.view);
+app.get('/customer', customer.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){

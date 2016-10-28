@@ -2,12 +2,9 @@ body {
     margin-bottom: 10px;
 }
 
+/*Add to all CSS files*/
 .navbar-nav {
     text-align: center;
-}
-
-#btn-logout {
-    width: 90%;
 }
 
 .row {

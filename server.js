@@ -24,9 +24,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add routes here
 app.get('/', index.view);
+
+// Retailer routes
 app.get('/retailer/home', retailerHome.view);
+
+//Customer routes
 app.get('/customer/home', customerHome.view);
-app.get('/customer/deal',customerDeal.view);
+app.get('/customer/deal', customerDeal.view);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

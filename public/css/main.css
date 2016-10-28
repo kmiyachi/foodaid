@@ -1,4 +1,12 @@
+body {
+    text-align: center;
+}
+
 /*Add to all CSS files*/
 .navbar-nav {
     text-align: center;
+}
+
+a {
+    font-size: xx-large;
 }

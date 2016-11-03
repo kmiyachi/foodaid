@@ -15,7 +15,7 @@
     {
       "name": "Ralphs",
       "id": 1,
-      "location": "40-50 min",
+      "wait-time": "40-50 min",
       "offers": [
         {
           "type": "Vegetables",
@@ -27,7 +27,7 @@
     {
       "name": "In-N-Out",
       "id": 2,
-      "location": "50-65 min",
+      "wait-time": "50-65 min",
       "offers": [
         {
           "type": "Burger",
@@ -39,7 +39,7 @@
     {
       "name": "Sushi Ki",
       "id": 3,
-      "location": "55-65 min",
+      "wait-time": "55-65 min",
       "offers": [
         {
           "type": "Sushi",

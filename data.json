@@ -3,7 +3,7 @@
     {
       "name": "Panera",
       "id": 0,
-      "wait-time": "35-50 min",
+      "wait-time": "35-150 min",
       "offers": [
         {
           "type": "Bread",

@@ -8,27 +8,113 @@
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootsrap/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/retailer/home.css" rel="stylesheet">
+    <link href="/css/retailer/verification.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FoodAid</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <button type="button" class="btn btn-danger navbar-btn" id="btn-logout">Logout</button>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
 <div class="container">
-    <div class="jumbotron">
-        <h1>Food Aid</h1>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <hr><h1> Choose an org for profit:</h1>
+            <br>
+            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                <label class="btn active">
+                    <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Postmates</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email2'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Uber Eats</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> GrubHub</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Door Dash</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Food-Aid Store</span>
+                </label>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <hr> <h1>And/or choose an org for donation:</h1>
+            <br>
+            <div class="btn-group btn-group-vertical" data-toggle="buttons">
+                <label class="btn active">
+                    <input type="checkbox" name='email1' checked><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i> <span> Lozarus House</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email2'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Half-Way House</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Women's Center</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Food Bank</span>
+                </label>
+                <label class="btn">
+                    <input type="checkbox" name='email3'><i class="fa fa-square-o fa-2x"></i><i class="fa fa-check-square-o fa-2x"></i><span> Food-Aid Charity</span>
+                </label>
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+    <div class = "row">
+        <a href ="info">
+            <button type="button" class="btn btn-info btn-lg">Submit</button>
+        </a>
+    </div>
+    <br>
+    <br>
+
+    <div class="row">
+        <a class="active" href="verification">Verification</a>
     </div>
     <div class="row">
-        <h1>I'm a Retailer</h1>
-    </div>
-    <div class="row">
-        <a class="active" href="info">Information</a>
-    </div>
-    <div class="row">
-        <a class="active" href="home">Back</a>
+        <a class="active" href="../../">Back</a>
     </div>
 </div>
+</div>
 
-<a href="home" />
+</div>
 
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+
 </body>
 </html>

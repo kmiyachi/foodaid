@@ -8,16 +8,125 @@
 	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootsrap/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/retailer/home.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 
 <body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FoodAid</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <button type="button" class="btn btn-danger navbar-btn" id="btn-logout">Logout</button>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
 	<div class="container">
-			<div class="jumbotron">
-				<h1>Food Aid</h1>
-			</div>
-			<div class="row">
-				<h1>I'm a Retailer</h1>
-			</div>
+		<script type="text/javascript">
+		function getCookie(name)
+		{
+			var re=new RegExp(name+"=([^;]+)");
+			var value=re.exec(document.cookie);
+			return(value!=null)?unescape(value[1]):null;
+		}
+		var today=new Date();
+		var expiry=new Date(today.getTime()+30*24*3600*1000);
+		var expired=new Date(today.getTime()-24*3600*1000);
+		function setCookie(name,value)
+		{
+			document.cookie=name+"="+escape(value)+"; path=/; expires="+expiry.toGMTString();
+		}
+		function deleteCookie(name)
+		{
+			document.cookie=name+"=null; path=/; expires="+expired.toGMTString();
+		}
+		function storeValues(form)
+		{
+			setCookie("field1",form.personname.value);
+			setCookie("field2",form.restaurantname.value);
+			setCookie("field3",form.pricefood.value);
+			setCookie("field4",form.foodname.value);
+			return true;
+		}
+		</script>
+
+		<form class="form-horizontal" method="post" name="myForm"  action="verification" onsubmit="return storeValues(this);">
+		<form class="form-horizontal" method="post" name="myForm"  action="verification" onsubmit="return storeValues(this);">
+		<fieldset>
+
+		<!-- Form Name -->
+		<legend>Tell us about your food!</legend>
+
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Your name:</label>  
+		  <div class="col-md-4">
+		  <input id="textinput" name="personname" type="text" placeholder="Enter your name" class="form-control input-md">
+		  </div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Your restaurant name:</label>  
+		  <div class="col-md-4">
+		  <input id="textinput" name="restaurantname" type="text" placeholder="Enter restaurant name" class="form-control input-md">
+		  </div>
+		</div>
+
+		<!-- Text input-->
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Your food:</label>  
+		  <div class="col-md-4">
+		  <input id="textinput" name="foodname" type="text" placeholder="Enter food name" class="form-control input-md">
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Your price:</label>  
+		  <div class="col-md-4">
+		  <input id="textinput" name="pricefood"  type="text" placeholder="Enter price" class="form-control input-md">
+		  </div>
+		</div>
+
+		<div class="form-group">
+		  <label class="col-md-4 control-label" for="textinput">Quantity per food item:</label>  
+		  <div class="col-md-4">
+		  <input id="textinput" name="quantityfood" type="number" placeholder="Enter quantity" class="form-control input-md">
+		  </div>
+		</div>
+
+		
+
+
+		<!-- Button -->
+		<div class="form-group">
+		<label class="col-md-4 control-label"></label>
+		  <div class="col-md-4">
+		  <a href ="options">
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		  </a>
+		  </div>
+		</div>
+
+		</fieldset>
+		</form>
+
             <div class="row">
                 <a class="active" href="options">Options</a>
             </div>

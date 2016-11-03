@@ -17,7 +17,8 @@ var customerMap = require('./routes/customer/map');
 var retailerHome = require('./routes/retailer/home');
 var retailerOptions = require('./routes/retailer/options');
 var retailerInfo = require('./routes/retailer/info');
-
+var retailerVerification = require('./routes/retailer/verification');
+var retailerConfirmation = require('./routes/retailer/confirmation');
 
 // express variable
 var app = express();
@@ -41,6 +42,9 @@ app.get('/customer/map', customerMap.view);
 app.get('/retailer/home', retailerHome.view);
 app.get('/retailer/info',retailerInfo.view);
 app.get('/retailer/options',retailerOptions.view);
+app.post('/retailer/verification',retailerVerification.view);
+app.get('/retailer/confirmation', retailerConfirmation.view);
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -38,6 +38,7 @@
 </nav>
 
 <div class="container">
+
     <div class="row">
         <div class="col-xs-12">
             <div class="input-group">
@@ -48,40 +49,17 @@
             </div>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-sm-6 col-md-4">
-            <a href="/customer/deal">
-                <div class="card mid">
-                    <h2>Panera</h2>
-                    <p>35-50 min * Bread</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <a href="/retailer">
-                <div class="card3 mid">
-                    <h2>Ralphs</h2>
-                    <p>45-50 min * Vegetables</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <a href="/costumer">
-                <div class="card1 mid">
-                    <h2>In-N-Out</h2>
-                    <p>45-50 min * Burger</p>
-                </div>
-            </a>
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <a href="/costumer">
-                <div class="card2 mid">
-                    <h2>Sushi Ki</h2>
-                    <p>45-50 min * Sushi</p>
-                </div>
-            </a>
-        </div>
+        {{#each retailers}}
+            <div class="col-sm-6 col-md-4">
+                <a href={{link}}>
+                    <div class="card{{id}} mid">
+                        <h2>{{name}}</h2>
+                        <p>{{wait-time}} * {{offers.0.type}}</p>
+                    </div>
+                </a>
+            </div>
+        {{/each}}
     </div>
 
 </div>

@@ -10,7 +10,7 @@ var index = require('./routes/index');
 
 //Customer Routes
 var customerHome = require('./routes/customer/home');
-var customerDeal = require('./routes/customer/deal');
+var customerDeal = require('./routes/customer/panera-deal');
 var customerMap = require('./routes/customer/map');
 
 //Retailer Routes
@@ -34,7 +34,7 @@ app.get('/', index.view);
 
 // Add customer routes
 app.get('/customer/home', customerHome.view);
-app.get('/customer/deal', customerDeal.view);
+app.get('/customer/panera-deal', customerDeal.view);
 app.get('/customer/map', customerMap.view);
 
 //Add retailer routes

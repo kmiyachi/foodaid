@@ -1,0 +1,52 @@
+{
+  "retailers": [
+    {
+      "name": "Panera",
+      "id": 0,
+      "wait-time": "35-50 min",
+      "offers": [
+        {
+          "type": "Bread",
+          "img": "food-bread.jpg"
+        }
+      ],
+      "link": "/customer/panera-deal"
+    },
+    {
+      "name": "Ralphs",
+      "id": 1,
+      "location": "40-50 min",
+      "offers": [
+        {
+          "type": "Vegetables",
+          "img": "food-vegetables.jpg"
+        }
+      ],
+      "link": "/customer/ralphs-deal"
+    },
+    {
+      "name": "In-N-Out",
+      "id": 2,
+      "location": "50-65 min",
+      "offers": [
+        {
+          "type": "Burger",
+          "img": "food-hamburger.jpg"
+        }
+      ],
+      "link": "/customer/in-n-out-deal"
+    },
+    {
+      "name": "Sushi Ki",
+      "id": 3,
+      "location": "55-65 min",
+      "offers": [
+        {
+          "type": "Sushi",
+          "img": "food-sushi.jpg"
+        }
+      ],
+      "link": "/customer/sushi-ki-deal"
+    }
+  ]
+}

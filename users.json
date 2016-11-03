@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "name": "Joe Doe",
+      "password": "0987654321",
+      "id": 1,
+      "retailer": ""
+    },
+    {
+      "name": "Connie Anderson",
+      "password": "1234567890",
+      "id": 2,
+      "retailer": "Ralphs"
+    }
+  ]
+}

@@ -12,6 +12,7 @@ var choose = require('./routes/choose');
 //Customer Routes
 var customerHome = require('./routes/customer/home');
 var customerMap = require('./routes/customer/map');
+var customerNewMap = require('./routes/customer/newmap');
 var paneraDeal = require('./routes/customer/panera-deal');
 var ralphsDeal = require('./routes/customer/ralphs-deal');
 var innoutDeal = require('./routes/customer/in-n-out-deal');
@@ -43,6 +44,7 @@ app.get('/choose', choose.view);
 app.get('/customer/home', customerHome.view);
 app.get('/customer/panera-deal', paneraDeal.view);
 app.get('/customer/map', customerMap.view);
+app.get('/customer/newmap', customerNewMap.view);
 app.get('/customer/ralphs-deal', ralphsDeal.view);
 app.get('/customer/in-n-out-deal',innoutDeal.view);
 app.get('/customer/sushi-ki-deal',sushikiDeal.view);

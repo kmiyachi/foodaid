@@ -16,14 +16,13 @@ function initializePage() {
 }
 
 function signIn() {
-    var emailAddress = $("#inputEmail").val();
-    var userTypeCheckbox = $("#user-type-checkbox").prop('checked');
     $(".btn-signin").on('click', function (e) {
         e.preventDefault();
-        /*console.log(emailAddress);
-        if(isValidEmailAddress(emailAddress)) {
+
+        /*if(isValidEmailAddress($("#inputEmail").text())) {
             $(".form-signin").attr("action", "/customer/home").submit();
         }*/
+
         if($("#user-type-checkbox").prop('checked')) {
             $(".form-signin").attr("action", "/retailer/home").submit();
         } else {

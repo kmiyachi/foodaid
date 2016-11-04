@@ -24,7 +24,7 @@ function signIn() {
         if(isValidEmailAddress(emailAddress)) {
             $(".form-signin").attr("action", "/customer/home").submit();
         }*/
-        $(".form-signin").attr("action", "/customer/home").submit();
+        $(".form-signin").attr("action", "/choose").submit();
     });
 }
 

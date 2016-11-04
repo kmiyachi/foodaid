@@ -7,6 +7,7 @@ var handlebars = require('express3-handlebars');
 
 // Routes
 var index = require('./routes/index');
+var choose = require('./routes/choose');
 
 //Customer Routes
 var customerHome = require('./routes/customer/home');
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add routes here
 app.get('/', index.view);
+app.get('/choose', choose.view);
 
 // Add customer routes
 app.get('/customer/home', customerHome.view);

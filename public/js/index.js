@@ -12,19 +12,23 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    console.log("Javascript connected!");
     signIn();
 }
 
 function signIn() {
     var emailAddress = $("#inputEmail").val();
-    $(".btn-signin").click(function (e) {
+    var userTypeCheckbox = $("#user-type-checkbox").prop('checked');
+    $(".btn-signin").on('click', function (e) {
         e.preventDefault();
         /*console.log(emailAddress);
         if(isValidEmailAddress(emailAddress)) {
             $(".form-signin").attr("action", "/customer/home").submit();
         }*/
-        $(".form-signin").attr("action", "/choose").submit();
+        if($("#user-type-checkbox").prop('checked')) {
+            $(".form-signin").attr("action", "/retailer/home").submit();
+        } else {
+            $(".form-signin").attr("action", "/customer/home").submit();
+        }
     });
 }
 

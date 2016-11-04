@@ -98,8 +98,8 @@
     <li class="header" style="background-color:#4CAF50">Total Price</li>
     <li><script type="text/javascript">document.write(getCookie("field1"))</script></li>
     <li>Quantity: <script type="text/javascript">document.write(getCookie("field2"))</script></li>
-    <li class="list-group-item list-group-item-danger">Total: $<script type="text/javascript">var quantity = parseInt(getCookie("field1"));
-var price = parseInt(getCookie("field2"));
+    <li class="list-group-item list-group-item-danger">Total: $<script type="text/javascript">var quantity = parseInt(getCookie("field1").replace(/[^\d.-]/g, ''));
+var price = parseInt(getCookie("field2").replace(/[^\d.-]/g, ''));
 var total = quantity * price;
 document.write(total);</script>.00</li>
     <li class="grey"><a href="#" class="button">Place Order</a></li>

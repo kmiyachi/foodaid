@@ -7,17 +7,16 @@ var handlebars = require('express3-handlebars');
 
 // Routes
 var index = require('./routes/index');
-var choose = require('./routes/choose');
 
 //Customer Routes
 var customerHome = require('./routes/customer/home');
+var deal = require('./routes/customer/deal');
 var customerMap = require('./routes/customer/map');
 var customerNewMap = require('./routes/customer/newmap');
 var paneraDeal = require('./routes/customer/panera-deal');
 var ralphsDeal = require('./routes/customer/ralphs-deal');
 var innoutDeal = require('./routes/customer/in-n-out-deal');
 var sushikiDeal = require('./routes/customer/sushi-ki-deal');
-
 
 //Retailer Routes
 var retailerHome = require('./routes/retailer/home');
@@ -38,10 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add routes here
 app.get('/', index.view);
-app.get('/choose', choose.view);
 
 // Add customer routes
 app.get('/customer/home', customerHome.view);
+app.get('/customer/deal', deal.view);
 app.get('/customer/panera-deal', paneraDeal.view);
 app.get('/customer/map', customerMap.view);
 app.get('/customer/newmap', customerNewMap.view);

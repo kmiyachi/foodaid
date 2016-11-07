@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
-    "express3-handlebars": "*"
+    "express3-handlebars": "*",
+    "jquery": "^3.1.1",
+    "lodash": "^4.16.6"
   }
 }

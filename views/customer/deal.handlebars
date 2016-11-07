@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/customer/panera-deal.css" rel="stylesheet">
+    <link href="/css/customer/deal.css" rel="stylesheet">
 </head>
 
 <body>
@@ -40,41 +40,13 @@
 </nav>
 
 <div class="container">
-<script type="text/javascript">
-        function getCookie(name)
-        {
-            var re=new RegExp(name+"=([^;]+)");
-            var value=re.exec(document.cookie);
-            return(value!=null)?unescape(value[1]):null;
-        }
-        var today=new Date();
-        var expiry=new Date(today.getTime()+30*24*3600*1000);
-        var expired=new Date(today.getTime()-24*3600*1000);
-        function setCookie(name,value)
-        {
-            document.cookie=name+"="+escape(value)+"; path=/; expires="+expiry.toGMTString();
-        }
-        function deleteCookie(name)
-        {
-            document.cookie=name+"=null; path=/; expires="+expired.toGMTString();
-        }
-        function storeValues(form)
-        {
-            var e = document.getElementById("sel1");
-            var value = e.options[e.selectedIndex].value;
-            var text = e.options[e.selectedIndex].text;
-            setCookie("field1",value);
-            setCookie("field2","$2.00/Burger");
-            return true;
-        }
-        </script>
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="center-text">9777 Genessee Avenue</h3>
+            <h3 class="address-box">9777 Genessee Avenue</h3>
             <hr/>
         </div>
         <div class="col-xs-12">
-            <img class="img-responsive" src="/images/food-hamburger.jpg"/>
+            <img id="img-box" class="img-responsive" src={{offers.0.local-img}}/>
             <hr/>
         </div>
 
@@ -83,7 +55,7 @@
                 <p class="form-text-right">Company: </p>
             </div>
             <div class="col-xs-4">
-                <p class="form-text-left">In-N-Out</p>
+                <p id="company-box" class="form-text-left">{{name}}</p>
             </div>
         </div>
 
@@ -92,7 +64,7 @@
                 <p class="form-text-right">Price: </p>
             </div>
             <div class="col-xs-4">
-                <p class="form-text-left">$2.00/Burger</p>
+                <p id="price-box" class="form-text-left">{{offers.0.price-string}}</p>
             </div>
         </div>
 
@@ -101,7 +73,7 @@
                 <p class="form-text-right">Wait Time: </p>
             </div>
             <div class="col-xs-4">
-                <p class="form-text-left">37 minutes</p>
+                <p id="wait-time-box" class="form-text-left">{{wait-time}}</p>
             </div>
         </div>
 
@@ -110,26 +82,13 @@
                 <p class="form-text-right">Quantity:</p>
             </div>
             <div class="col-xs-8">
-                <select class="form-control" id="sel1">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                </select>
+                <select class="form-control" id="quantity-box"></select>
             </div>
         </div>
 
         <div class="col-xs-12">
             <a href="map">
-                <button onclick= "return storeValues(this);" type="button" class="btn btn-info navbar-btn" id="btn-add-to-cart">Add to cart</button>
+                <button onclick="return storeValues(this);" type="button" class="btn btn-info navbar-btn" id="btn-add-to-cart">Add to cart</button>
             </a>
         </div>
 
@@ -138,6 +97,7 @@
 
 <script src="/js/jquery-1.11.0.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/customer/deal.js"></script>
 
 </body>
 </html>

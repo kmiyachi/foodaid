@@ -53,7 +53,8 @@
         {{#each retailers}}
             <div class="col-sm-6 col-md-4">
                 <a href={{link}}>
-                    <div class="card{{id}} mid">
+                    <div class="card mid deal"
+                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{offers.0.img}})">
                         <h2>{{name}}</h2>
                         <p>{{wait-time}} * {{offers.0.type}}</p>
                     </div>
@@ -64,8 +65,9 @@
 
 </div>
 
-<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/jquery-1.11.0.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/customer/home.js"></script>
 
 </body>
 </html>

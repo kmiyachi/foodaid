@@ -2,7 +2,7 @@
  * Created by quiquemz on 11/3/16.
  */
 'use strict';
-var today=new Date();
+var today = new Date();
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -34,10 +34,13 @@ function submitOrder() {
 }
 
 function storeValues(form) {
-    var e = document.getElementById("quantity-box");
-    var value = e.options[e.selectedIndex].value;
-    setCookie("field1", value);
-    setCookie("field2", "$3.00/loaf");
+    var quantityBox = document.getElementById("quantity-box");
+    var quantity = quantityBox.options[quantityBox.selectedIndex].value;
+    var priceBox = document.getElementById("price-box");
+    var price = priceBox.innerHTML;
+
+    setCookie("field1", quantity);
+    setCookie("field2", price);
 }
 
 function setCookie(name,value) {

@@ -11,12 +11,8 @@ var index = require('./routes/index');
 //Customer Routes
 var customerHome = require('./routes/customer/home');
 var deal = require('./routes/customer/deal');
-var customerMap = require('./routes/customer/map');
-var customerNewMap = require('./routes/customer/newmap');
-var paneraDeal = require('./routes/customer/panera-deal');
-var ralphsDeal = require('./routes/customer/ralphs-deal');
-var innoutDeal = require('./routes/customer/in-n-out-deal');
-var sushikiDeal = require('./routes/customer/sushi-ki-deal');
+var orderSummary = require('./routes/customer/order-summary');
+var map = require('./routes/customer/map');
 
 //Retailer Routes
 var retailerHome = require('./routes/retailer/home');
@@ -41,12 +37,8 @@ app.get('/', index.view);
 // Add customer routes
 app.get('/customer/home', customerHome.view);
 app.get('/customer/deal', deal.view);
-app.get('/customer/panera-deal', paneraDeal.view);
-app.get('/customer/map', customerMap.view);
-app.get('/customer/newmap', customerNewMap.view);
-app.get('/customer/ralphs-deal', ralphsDeal.view);
-app.get('/customer/in-n-out-deal',innoutDeal.view);
-app.get('/customer/sushi-ki-deal',sushikiDeal.view);
+app.get('/customer/order-summary', orderSummary.view);
+app.get('/customer/map', map.view);
 
 //Add retailer routes
 app.get('/retailer/home', retailerHome.view);

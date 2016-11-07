@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/customer/map.css" rel="stylesheet">
+    <link href="/css/customer/order-summary.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -37,20 +40,40 @@
     </div>
 </nav>
 
-<div id="map-container">
+<div class="container">
+    <div id="panel-row" class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading title-box">Order Summary</div>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>Quantity: </td>
+                        <td id="quantity-box"></td>
+                    </tr>
+                    <tr>
+                        <td>Price: </td>
+                        <td id="price-box"></td>
+                    </tr>
+                    <tr>
+                        <td>Total: </td>
+                        <td id="total-box"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="title-box" class="panel-heading">Delivery Route</div>
     <div id="map"></div>
+    <button type="button" class="btn btn-info navbar-btn" id="btn-place-order">Place Order</button>
+    
 </div>
 
-<nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container-fluid">
-        <button type="button" id="btn-contact" class="btn btn-primary btn-lg">Contact Restaurant</button>
-    </div>
-</nav>
-
-<script src="/js/jquery-1.11.0.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOGZRDsNoTs3Dv_UkoTTy26mzo2fvOGDQ&sensor=false"></script>
-<script src="/js/customer/map.js"></script>
+<script src="/js/customer/order-summary.js"></script>
 
 </body>
 </html>

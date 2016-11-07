@@ -14,7 +14,7 @@ $(document).ready(function() {
  */
 function initializePage() {
     populateSelect();
-    storeValues();
+    submitOrder();
 }
 
 function populateSelect() {
@@ -26,12 +26,18 @@ function populateSelect() {
     }
 }
 
-function storeValues() {
+function submitOrder() {
+    $("#btn-add-to-cart").on('click', function () {
+        storeValues(this);
+        location.href = "/customer/order-summary";
+    });
+}
+
+function storeValues(form) {
     var e = document.getElementById("quantity-box");
     var value = e.options[e.selectedIndex].value;
     setCookie("field1", value);
     setCookie("field2", "$3.00/loaf");
-    return true;
 }
 
 function setCookie(name,value) {
@@ -49,3 +55,4 @@ function deleteCookie(name) {
     var expired=new Date(today.getTime()-24*3600*1000);
     document.cookie=name+"=null; path=/; expires="+expired.toGMTString();
 }
+

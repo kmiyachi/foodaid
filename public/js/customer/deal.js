@@ -17,6 +17,7 @@ $(document).ready(function() {
 function initializePage() {
     populateSelect();
     submitOrder();
+    goBack();
 }
 
 function populateSelect() {
@@ -35,6 +36,12 @@ function submitOrder() {
         storeValues(this);
         location.href = "/customer/order-summary";
     });
+}
+
+function goBack() {
+    $('.btn-go-back').on('click', function () {
+        window.history.back();
+    })
 }
 
 function storeValues(form) {

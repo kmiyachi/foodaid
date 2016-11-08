@@ -12,17 +12,6 @@
       "local-img": "/images/food-bread.jpg"
     },
     {
-      "name": "ralphs",
-      "id": 1,
-      "wait-time": "40-50 min",
-      "offer": "vegetables",
-      "price": 1,
-      "price-per-unit": "$1.00/lb",
-      "quantity": 15,
-      "img": "https://files.atkins.com/Low-Carb-Vegetable-Recipes.png",
-      "local-img": "/images/food-vegetables.jpg"
-    },
-    {
       "name": "in-n-out",
       "id": 2,
       "wait-time": "50-65 min",
@@ -43,6 +32,17 @@
       "quantity": 20,
       "img": "http://static.wixstatic.com/media/ba20a3_2b9122727d744c709a44b852f9491e73.jpg_srz_940_622_85_22_0.50_1.20_0.00_jpg_srz",
       "local-img": "/images/food-sushi.jpg"
-    }
+    },
+    {
+      "name": "ralphs",
+      "id": 1,
+      "wait-time": "40-50 min",
+      "offer": "vegetables",
+      "price": 1,
+      "price-per-unit": "$1.00/lb",
+      "quantity": 15,
+      "img": "https://files.atkins.com/Low-Carb-Vegetable-Recipes.png",
+      "local-img": "/images/food-vegetables.jpg"
+    },
   ]
 }

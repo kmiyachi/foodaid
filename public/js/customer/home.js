@@ -13,6 +13,8 @@ $(document).ready(function() {
  */
 function initializePage() {
     listenToClickEvent();
+    sortByActiveTab();
+    setActiveTab();
 }
 
 function listenToClickEvent() {
@@ -23,4 +25,17 @@ function listenToClickEvent() {
         var companyOffer = $(this).find(".company-offer").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
     });
+}
+
+function sortByActiveTab() {
+    $("li.active > a.sort").click();
+}
+
+function setActiveTab() {
+    $('a.sort').on('click', function () {
+        $("li.active").removeClass("active");
+        $(this).parent().addClass("active");
+    });
+
+
 }

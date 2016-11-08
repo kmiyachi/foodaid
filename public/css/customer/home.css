@@ -2,9 +2,23 @@ body {
     margin-bottom: 10px;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 /*Add to all CSS files*/
 .navbar-nav {
     text-align: center;
+}
+
+.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+}
+
+.sort {
+    font-size: smaller;
 }
 
 .row {

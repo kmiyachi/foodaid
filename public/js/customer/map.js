@@ -13,6 +13,13 @@ $(document).ready(function() {
  */
 function initializePage() {
     google.maps.event.addDomListener(window, 'load', initialize);
+    goBack();
+}
+
+function goBack() {
+    $('.btn-go-back').on('click', function () {
+        window.history.back();
+    })
 }
 
 /* Google Maps */

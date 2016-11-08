@@ -9,12 +9,12 @@ body {
     margin: 0;
 }
 
-#panel-row {
-    padding: 0 10px;
+.btn-go-back {
+    cursor: pointer;
 }
 
-.panel {
-
+#panel-row {
+    padding: 0 10px;
 }
 
 .title-box {

@@ -8,10 +8,8 @@ body {
     text-align: center;
 }
 
-.my-btn-back {
-    float:left;
-    padding:15px;
-    display:inline-block;
+.btn-go-back {
+    cursor: pointer;
 }
 
 .address-box {

@@ -17,6 +17,10 @@ body {
     margin: 0;
 }
 
+.btn-go-back {
+    cursor: pointer;
+}
+
 #map-container {
     height: 100%
 }

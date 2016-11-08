@@ -17,6 +17,13 @@ function initializePage() {
     populateTotalBox();
     google.maps.event.addDomListener(window, 'load', initialize);
     placeOrder();
+    goBack();
+}
+
+function goBack() {
+    $('.btn-go-back').on('click', function () {
+        window.history.back();
+    })
 }
 
 function populateQuanityBox() {

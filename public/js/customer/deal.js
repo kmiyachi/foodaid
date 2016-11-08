@@ -2,6 +2,8 @@
  * Created by quiquemz on 11/3/16.
  */
 'use strict';
+var data = ("../../../data.json");
+var _ = ('lodash');
 var today = new Date();
 
 // Call this function when the page loads (the "ready" event)
@@ -18,8 +20,10 @@ function initializePage() {
 }
 
 function populateSelect() {
-    for(var i = 1; i <= 100; i++) {
-        $("#quantity-box").append($('<option>', {
+    var quantityBox = $("#quantity-box");
+    var maxQuantity = parseInt(quantityBox.html());
+    for(var i = 1; i <= maxQuantity; i++) {
+        quantityBox.append($('<option>', {
             value: i,
             text: i
         }));

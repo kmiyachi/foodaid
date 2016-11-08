@@ -19,7 +19,8 @@ function listenToClickEvent() {
     $(".deal").on('click', function (e) {
         e.preventDefault();
 
-        var retailer = $(this).find("h2").text();
-        location.href = "/customer/deal?name=" + retailer;
+        var companyName = $(this).find(".company-name").text();
+        var companyOffer = $(this).find(".company-offer").html();
+        location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
     });
 }

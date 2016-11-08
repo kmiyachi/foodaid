@@ -35,8 +35,8 @@ function populatePriceBox() {
 }
 
 function populateTotalBox() {
-    var quantity = parseInt(getCookie("field1").replace(/[^\d.-]/g, ''));
-    var price = parseInt(getCookie("field2").replace(/[^\d.-]/g, ''));
+    var quantity = parseFloat(getCookie("field1").replace(/[^\d.-]/g, ''));
+    var price = parseFloat(getCookie("field2").replace(/[^\d.-]/g, ''));
     var total = quantity * price;
     $("#total-box").text("$" + total + ".00");
 }

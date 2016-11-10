@@ -19,6 +19,7 @@ ul {
 
 .sort {
     font-size: smaller;
+    cursor: pointer ;
 }
 
 .row {

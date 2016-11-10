@@ -1,6 +1,7 @@
 /* Module dependencies. */
 
 var express = require('express');
+var firebase = require("firebase");
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars');

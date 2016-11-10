@@ -8,7 +8,14 @@ $(document).on('click', '#close-preview', function(){
          function () {
            $('.image-preview').popover('hide');
         }
-    );    
+    );
+});
+
+$(document).on('click', '#submit-btn', function(){
+    var name = document.getElementById("person_name").value;
+    //var pname = $('#person_name').val();
+    //console.log(pname);
+    console.log(name);
 });
 
 $(function() {

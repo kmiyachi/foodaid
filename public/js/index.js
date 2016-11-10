@@ -13,6 +13,7 @@ $(document).ready(function() {
  */
 function initializePage() {
     signIn();
+    register();
 }
 
 function signIn() {
@@ -31,7 +32,24 @@ function signIn() {
     });
 }
 
+function register() {
+    $(".btn-register").on('click', function(e) {
+        e.preventDefault();
+        $(".form-signin").attr("action", "/register").submit();
+    });
+}
 function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
+}
+
+function validatePassword(password,confirm) {
+    var passcheck = password == confirm;
+    return passcheck;
+}
+
+function userPost() {
+    var data = {
+
+    }
 }

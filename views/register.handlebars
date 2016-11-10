@@ -1,0 +1,124 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>CSE170 Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/retailer/home.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FoodAid</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <button type="button" class="btn btn-danger navbar-btn" id="btn-logout">Logout</button>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <form class="form-horizontal" role="form">
+        <h2>Registration Form</h2>
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" id="email" placeholder="Email" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+                <input type="password" id="password" placeholder="Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Confirm Password</label>
+            <div class="col-sm-9">
+                <input type="password_confirm" id="password_confirm" placeholder="Password" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="country" class="col-sm-3 control-label">Location</label>
+            <div class="col-sm-9">
+                <select id="country" class="form-control">
+                    <option>San Diego</option>
+                    <option>Los Angeles</option>
+                    <option>Boston</option>
+                    <option>San Francisco</option>
+                    <option>New York</option>
+                    <option>Miami</option>
+                    <option>Montreal</option>
+                    <option>Seattle</option>
+                </select>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <label class="control-label col-sm-3">Account Type</label>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label class="radio-inline">
+                            <input type="radio" id="customerRadio" value="Customer" name="radio">Customer
+                        </label>
+                    </div>
+                    <div class="col-xs-6">
+                        <label class="radio-inline">
+                            <input type="radio" id="retailerRadio" value="Retailer" name="radio">Retailer
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox">I accept <a href="#">terms</a>
+                    </label>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+        </div>
+    </form> <!-- /form -->
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/register.js"></script>
+
+
+</body>
+</html>

@@ -43,6 +43,13 @@ function validateEmail(email) {
     return re.test(email);
 }
 
-function validatePassowrd(password,confirm) {
-    return password == confirm;
+function validatePassword(password,confirm) {
+    var passcheck = password == confirm;
+    return passcheck;
+}
+
+function userPost() {
+    var data = {
+
+    }
 }

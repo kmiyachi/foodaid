@@ -39,3 +39,20 @@ function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+function postdata() {
+    var fullname = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var confirm = document.getElementById("password_confirm").value;
+    var location = document.getElementById("location").value;
+    var radios = document.getElementsByName('radio');
+    var type;
+    if (radios[0].checked) {
+        type = "customer";
+    }
+    else {
+        type = "retailer";
+    }
+
+}

@@ -9,6 +9,12 @@
     <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/retailer/home.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.2.3/jquery.payment.min.js"></script>
+
+    <!-- If you're using Stripe for payments -->
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 </head>
 
 <body>
@@ -38,113 +44,99 @@
     </div>
 </nav>
 <div class="container">
-    <form class="form-horizontal">
-        <fieldset>
+    <div class="row">
+        <!-- You can make it whatever width you want. I'm making it full width
+             on <= small devices and 4/12 page width on >= medium devices -->
+        <div class="col-xs-12 col-md-4">
 
-            <!-- Form Name -->
-            <legend>My Profile -> Account setting</legend>
 
-            <!-- Text input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Change Email ID</label>
-                <div class="col-md-4">
-                    <input id="textinput" name="textinput" type="text" placeholder="your current email " class="form-control input-md">
-                    <span class="help-block">your new email ID</span>
-                </div>
-            </div>
-
-            <!-- Password input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="passwordinput">new password</label>
-                <div class="col-md-4">
-                    <input id="passwordinput" name="passwordinput" type="password" placeholder="new password" class="form-control input-md">
-
-                </div>
-            </div>
-
-            <!-- Password input-->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="passwordinput">repeat password</label>
-                <div class="col-md-4">
-                    <input id="passwordinput" name="passwordinput" type="password" placeholder="repeat password" class="form-control input-md">
-
-                </div>
-            </div>
-
-            <!-- Select Basic -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="selectbasic">set security question</label>
-                <div class="col-md-4">
-                    <select id="selectbasic" name="selectbasic" class="form-control">
-                        <option value="1">Question 1</option>
-                        <option value="2">Question 2</option>
-                        <option value="3">Question 3</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton">view account status</label>
-                <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-success">view</button>
-                </div>
-            </div>
-
-            <!-- Button -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton">Remove my account</label>
-                <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-danger">remove</button>
-                </div>
-            </div>
-
-            <!-- Multiple Checkboxes -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="checkboxes">Privacy settings</label>
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label for="checkboxes-0">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                            1
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-1">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
-                            2
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-2">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
-                            3
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-3">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
-                            4
-                        </label>
+            <!-- CREDIT CARD FORM STARTS HERE -->
+            <div class="panel panel-default credit-card-box">
+                <div class="panel-heading display-table" >
+                    <div class="row display-tr" >
+                        <h3 class="panel-title display-td" >Payment Details</h3>
+                        <div class="display-td" >
+                            <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Select Multiple -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="selectmultiple">Languages</label>
-                <div class="col-md-4">
-                    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
-                        <option value="1">Persian</option>
-                        <option value="2">English</option>
-                        <option value="3">Arabic</option>
-                    </select>
+                <div class="panel-body">
+                    <form role="form" id="payment-form" method="POST" action="javascript:void(0);">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="cardNumber">CARD NUMBER</label>
+                                    <div class="input-group">
+                                        <input
+                                                type="tel"
+                                                class="form-control"
+                                                name="cardNumber"
+                                                placeholder="Valid Card Number"
+                                                autocomplete="cc-number"
+                                                required autofocus
+                                        />
+                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                    <label for="cardExpiry"><span class="hidden-xs">EXPIRATION</span><span class="visible-xs-inline">EXP</span> DATE</label>
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardExpiry"
+                                            placeholder="MM / YY"
+                                            autocomplete="cc-exp"
+                                            required
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                    <label for="cardCVC">CV CODE</label>
+                                    <input
+                                            type="tel"
+                                            class="form-control"
+                                            name="cardCVC"
+                                            placeholder="CVC"
+                                            autocomplete="cc-csc"
+                                            required
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Add Card</button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponCode">Enter Promotion Code</label>
+                                    <input type="text" class="form-control" name="couponCode" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="subscribe btn btn-primary btn-lg btn-block" type="button">Submit Promo Code</button>
+                            </div>
+                        </div>
+                        <div class="row" style="display:none;">
+                            <div class="col-xs-12">
+                                <p class="payment-errors"></p>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-
-        </fieldset>
-    </form>
-
+        </div>
+    </div>
 </div>
 </body>
 

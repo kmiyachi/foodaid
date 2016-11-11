@@ -28,18 +28,9 @@ var retailerInfo = require('./routes/retailer/info');
 var retailerVerification = require('./routes/retailer/verification');
 var retailerConfirmation = require('./routes/retailer/confirmation');
 
-var users = {
-  "usersList": [
-    {
-      "firstName": "Saul",
-      "lastName": "Mendez",
-      "type": "Customer",
-      "email": "semendez@ucsd.edu",
-      "password": "1234",
-      "id": 1
-    }
-  ]
-};
+//JSON OBJECTS
+var users = require('./users.json');
+var offers = require('./data.json');
 
 // express variable
 var app = express();
@@ -70,8 +61,11 @@ app.get('/login', index.view);
 app.post('/login', function (req, res) {
   var email = req.body.email;
   var passw = req.body.password;
+  var retailer = req.body.retailer === 'on';
   var user = _.find(users.usersList, {'email': email, 'password': passw});
-  if(user)
+  if(user && retailer)
+    res.redirect('/retailer/home');
+  else if(user)
     res.redirect('/customer/home');
   else
     res.redirect('/login');
@@ -95,14 +89,37 @@ app.get('/users', function(req, res) {
   res.send(users);
 });
 
+app.get('/offers', function(req, res) {
+  res.send(offers);
+});
+
 // Add customer routes
-app.get('/customer/home', customerHome.view);
+app.get('/customer/home', function(req, res){
+  res.render('customer/home', offers);
+});
 app.get('/customer/deal', deal.view);
 app.get('/customer/order-summary', orderSummary.view);
 app.get('/customer/map', map.view);
 
 //Add retailer routes
 app.get('/retailer/home', retailerHome.view);
+app.post('/retailer/home', function (req, res) {
+  console.log(req.body.localImg);
+  offers.offers.push({
+    "owner": req.body.owner,
+    "name": req.body.name,
+    "id": offers.offers.length + 1,
+    "wait-time": "35-50 min",
+    "offer": req.body.offer,
+    "price": parseInt(req.body.price),
+    "price-per-unit": "$" + req.body.price + ".00/" + req.body.measure,
+    "quantity": parseInt(req.body.quantity),
+    "img": "http://images.indianexpress.com/2016/05/breads_759_thinkstockphotos-484163886.jpg",
+    "local-img": "/images/food-bread.jpg"
+  });
+  res.redirect('/customer/home');
+});
+
 app.get('/retailer/info',retailerInfo.view);
 app.get('/retailer/options',retailerOptions.view);
 app.get('/retailer/verification',retailerVerification.view);

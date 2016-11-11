@@ -38,13 +38,31 @@
     </div>
 </nav>
 <div class="container">
-    <form class="form-horizontal" role="form">
+    <form class="form-register" role="form">
         <h2>Registration Form</h2>
+        <div class="form-group">
+            <div class="well well-sm">
+                <label class="control-label col-sm-3">Account Type</label>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label class="radio-inline">
+                                <input type="radio" id="customerRadio" value="Customer" name="radio">Customer
+                            </label>
+                        </div>
+                        <div class="col-xs-6">
+                            <label class="radio-inline">
+                                <input type="radio" id="retailerRadio" value="Retailer" name="radio">Retailer
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">Full Name</label>
             <div class="col-sm-9">
                 <input type="text" id="fullName" placeholder="Full Name" class="form-control" autofocus>
-                <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
             </div>
         </div>
         <div class="form-group">
@@ -72,23 +90,6 @@
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-3">Account Type</label>
-            <div class="col-sm-12">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <label class="radio-inline">
-                            <input type="radio" id="customerRadio" value="Customer" name="radio">Customer
-                        </label>
-                    </div>
-                    <div class="col-xs-6">
-                        <label class="radio-inline">
-                            <input type="radio" id="retailerRadio" value="Retailer" name="radio">Retailer
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- /.form-group -->
-        <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
                 <div class="checkbox">
                     <label>
@@ -99,8 +100,13 @@
         </div> <!-- /.form-group -->
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <button type="submit" id="btn-register" class="btn btn-primary btn-block">Register</button>
             </div>
+        </div>
+        <div class="form-group">
+            {{#each users}}
+                <h2>{{name}}</h2>
+            {{/each}}
         </div>
     </form> <!-- /form -->
 </div>
@@ -108,7 +114,9 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOGZRDsNoTs3Dv_UkoTTy26mzo2fvOGDQ"></script>
 <script src="/js/register.js"></script>
+
 
 
 </body>

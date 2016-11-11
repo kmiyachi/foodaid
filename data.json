@@ -1,6 +1,7 @@
 {
   "offers": [
     {
+      "owner": "Saul Mendez",
       "name": "panera",
       "id": 0,
       "wait-time": "35-50 min",
@@ -12,6 +13,7 @@
       "local-img": "/images/food-bread.jpg"
     },
     {
+      "owner": "Saul Mendez",
       "name": "in-n-out",
       "id": 2,
       "wait-time": "50-65 min",
@@ -34,6 +36,7 @@
       "local-img": "/images/food-sushi.jpg"
     },
     {
+      "owner": "Saul Mendez",
       "name": "ralphs",
       "id": 1,
       "wait-time": "40-50 min",
@@ -45,6 +48,7 @@
       "local-img": "/images/food-vegetables.jpg"
     },
     {
+      "owner": "Saul Mendez",
       "name": "in-n-out",
       "id": 1,
       "wait-time": "80-90 min",

@@ -1,0 +1,159 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>CSE170 Project</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/retailer/home.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">FoodAid</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Settings</a></li>
+                <li role="separator" class="divider"></li>
+                <button type="button" class="btn btn-danger navbar-btn" id="btn-logout">Logout</button>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<div class="container">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>My Profile -> Account setting</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">Change Email ID</label>
+                <div class="col-md-4">
+                    <input id="textinput" name="textinput" type="text" placeholder="your current email " class="form-control input-md">
+                    <span class="help-block">your new email ID</span>
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="passwordinput">new password</label>
+                <div class="col-md-4">
+                    <input id="passwordinput" name="passwordinput" type="password" placeholder="new password" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="passwordinput">repeat password</label>
+                <div class="col-md-4">
+                    <input id="passwordinput" name="passwordinput" type="password" placeholder="repeat password" class="form-control input-md">
+
+                </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectbasic">set security question</label>
+                <div class="col-md-4">
+                    <select id="selectbasic" name="selectbasic" class="form-control">
+                        <option value="1">Question 1</option>
+                        <option value="2">Question 2</option>
+                        <option value="3">Question 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton">view account status</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-success">view</button>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="singlebutton">Remove my account</label>
+                <div class="col-md-4">
+                    <button id="singlebutton" name="singlebutton" class="btn btn-danger">remove</button>
+                </div>
+            </div>
+
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="checkboxes">Privacy settings</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="checkboxes-0">
+                            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                            1
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-1">
+                            <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                            2
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-2">
+                            <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
+                            3
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="checkboxes-3">
+                            <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
+                            4
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Select Multiple -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="selectmultiple">Languages</label>
+                <div class="col-md-4">
+                    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+                        <option value="1">Persian</option>
+                        <option value="2">English</option>
+                        <option value="3">Arabic</option>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+</body>
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOGZRDsNoTs3Dv_UkoTTy26mzo2fvOGDQ"></script>
+<script src="/js/register.js"></script>
+
+
+
+</body>
+</html>

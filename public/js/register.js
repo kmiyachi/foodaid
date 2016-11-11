@@ -16,6 +16,7 @@ $(document).ready(function() {
  */
 function initializePage() {
     radio();
+    postdata();
 }
 
 function radio() {
@@ -41,18 +42,49 @@ function validateEmail(email) {
 }
 
 function postdata() {
-    var fullname = document.getElementById("fullname").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confirm = document.getElementById("password_confirm").value;
-    var location = document.getElementById("location").value;
-    var radios = document.getElementsByName('radio');
-    var type;
-    if (radios[0].checked) {
-        type = "customer";
-    }
-    else {
-        type = "retailer";
-    }
+    $("#btn-register").on('click', function (e) {
+        e.preventDefault();
 
+        var full_name = document.getElementById("fullName").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        var confirm = document.getElementById("password_confirm").value;
+        var location = document.getElementById("location").value;
+        var radios = document.getElementsByName('radio');
+        var type;
+        if (radios[0].checked) {
+            type = "customer";
+        }
+        else {
+            type = "retailer";
+        }
+        console.log(full_name);
+        console.log(email);
+        console.log(password);
+        console.log(confirm);
+        console.log(location);
+        console.log(type);
+        var data =
+        {
+            "name": full_name,
+            "type": type,
+            "email": email,
+            "password": password,
+            "id": 2,
+            "location": {
+                "address": location,
+                "lat": "32.00",
+                "long": "-117.76"
+            }
+        }
+        localStorage.setItem('data', JSON.stringify(data));
+
+        var retrievedObject = localStorage.getItem('data');
+
+        console.log('typeof retrievedObject: ' + typeof retrievedObject);
+        console.log('Value of retrievedObject: ' + retrievedObject);
+
+
+        $(".form-register").attr("action", "/").submit();
+    });
 }

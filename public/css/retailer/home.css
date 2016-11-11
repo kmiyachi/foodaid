@@ -41,3 +41,7 @@ body {
 .image-preview-input-title {
     margin-left:2px;
 }
+
+.well {
+	background: aliceblue;
+}

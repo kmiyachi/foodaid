@@ -12,12 +12,12 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-    listenToClickEvent();
+    clickOffer();
     sortByActiveTab();
     setActiveTab();
 }
 
-function listenToClickEvent() {
+function clickOffer() {
     $(".deal").on('click', function (e) {
         e.preventDefault();
 
@@ -32,7 +32,8 @@ function sortByActiveTab() {
 }
 
 function setActiveTab() {
-    $('a.sort').on('click', function () {
+    $('a.sort').on('click', function (e) {
+        e.preventDefault();
         $("li.active").removeClass("active");
         $(this).parent().addClass("active");
     });

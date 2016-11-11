@@ -21,11 +21,7 @@ function signIn() {
         e.preventDefault();
 
         if(validateEmail($("#input-email").val())) {
-            if($("#user-type-checkbox").prop('checked')) {
-                $(".form-signin").attr("action", "/retailer/home").submit();
-            } else {
-                $(".form-signin").attr("action", "/customer/home").submit();
-            }
+            $(".form-signin").attr("action", "/login").submit();
         } else {
             alert("Please enter valid email.");
         }

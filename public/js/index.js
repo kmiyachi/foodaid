@@ -29,7 +29,7 @@ function signIn() {
 }
 
 function register() {
-    $(".btn-register").on('click', function(e) {
+    $("#btn-register").on('click', function(e) {
         e.preventDefault();
         $(".form-signin").attr("action", "/register").submit();
     });

@@ -21,18 +21,16 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="images/avatar_img.png" />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
+        <form class="form-signin" action="login" method="post">
             <span class="reauth-email"></span>
-            <input type="email" id="input-email" class="form-control" placeholder="Email address" required autofocus/>
-            <input type="password" id="input-password" class="form-control" placeholder="Password" required/>
+            <input type="email" id="input-email" name="email" class="form-control" placeholder="Email address" required autofocus/>
+            <input type="password" id="input-password" name="password" class="form-control" placeholder="Password" required/>
             <input type="checkbox" value="remember-me"/> Remember me
             <br/>
             <input id="user-type-checkbox" type="checkbox"/> <strong>Are you a retailer? (Select if you are)</strong>
             <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
-            <a href="/register">
-                <button class="btn btn-lg btn-primary btn-block btn-register" type="submit">Register</button>
-            </a>
         </form><!-- /form -->
+        <button class="btn btn-lg btn-primary btn-block btn-register btn-signin">Register</button>
         <a href="#" class="forgot-password">
             Forgot the password?
         </a>

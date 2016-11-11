@@ -28,9 +28,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="menu">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Settings</a></li>
+                <li><a href="/support">Support</a></li>
+                <li><a href="/paymentinfo">Payment Information</a></li>
+                <li><a href="/settings">Settings</a></li>
                 <li role="separator" class="divider"></li>
                 <button type="button" class="btn btn-danger navbar-btn" id="btn-logout">Logout</button>
             </ul>
@@ -42,15 +42,16 @@
         <fieldset>
 
             <!-- Form Name -->
-            <legend>My Profile -> Account setting</legend>
+            <legend>Account Settings</legend>
 
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Change Email ID</label>
                 <div class="col-md-4">
                     <input id="textinput" name="textinput" type="text" placeholder="your current email " class="form-control input-md">
-                    <span class="help-block">your new email ID</span>
                 </div>
+                <br>
+                <button class="btn btn-primary btn-email" type="submit">Change Email</button>
             </div>
 
             <!-- Password input-->
@@ -58,7 +59,6 @@
                 <label class="col-md-4 control-label" for="passwordinput">new password</label>
                 <div class="col-md-4">
                     <input id="passwordinput" name="passwordinput" type="password" placeholder="new password" class="form-control input-md">
-
                 </div>
             </div>
 
@@ -67,20 +67,27 @@
                 <label class="col-md-4 control-label" for="passwordinput">repeat password</label>
                 <div class="col-md-4">
                     <input id="passwordinput" name="passwordinput" type="password" placeholder="repeat password" class="form-control input-md">
-
+                    <br>
+                    <button class="btn btn-primary btn-passowrd" type="submit">Change Password</button>
                 </div>
             </div>
 
             <!-- Select Basic -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="selectbasic">set security question</label>
+                <label class="col-md-4 control-label" for="selectbasic">Set Security Question</label>
                 <div class="col-md-4">
                     <select id="selectbasic" name="selectbasic" class="form-control">
-                        <option value="1">Question 1</option>
-                        <option value="2">Question 2</option>
-                        <option value="3">Question 3</option>
+                        <option value="1">Where is your hometown?</option>
+                        <option value="2">What is your favorite Dinosaur?</option>
+                        <option value="3">Do you prefer Chicken on your Waffles?</option>
                     </select>
                 </div>
+                <label class="col-md-4 control-label" for="passwordinput">repeat password</label>
+                <div class="col-md-4">
+                    <input id="securityanswer" name="securityanswer" type="security" placeholder="security question answer" class="form-control input-md">
+                </div>
+                <br>
+                <button class="btn btn-primary btn-question" type="submit">Set Security Question</button>
             </div>
 
             <!-- Button -->
@@ -93,43 +100,11 @@
 
             <!-- Button -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="singlebutton">Remove my account</label>
+                <label class="col-md-4 control-label" for="singlebutton">Delete my account</label>
                 <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-danger">remove</button>
+                    <button id="singlebutton" name="singlebutton" class="btn btn-danger">Delete</button>
                 </div>
             </div>
-
-            <!-- Multiple Checkboxes -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="checkboxes">Privacy settings</label>
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label for="checkboxes-0">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                            1
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-1">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
-                            2
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-2">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-2" value="3">
-                            3
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="checkboxes-3">
-                            <input type="checkbox" name="checkboxes" id="checkboxes-3" value="4">
-                            4
-                        </label>
-                    </div>
-                </div>
-            </div>
-
             <!-- Select Multiple -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="selectmultiple">Languages</label>
@@ -138,8 +113,16 @@
                         <option value="1">Persian</option>
                         <option value="2">English</option>
                         <option value="3">Arabic</option>
+                        <option value="2">Spanish</option>
+                        <option value="3">Japanese</option>
+                        <option value="2">Sri Lankan</option>
+                        <option value="3">Chinese</option>
                     </select>
                 </div>
+            </div>
+            <div class="from-group row">
+                <button class="btn btn-primary btn-language" type="submit">Change Language</button>
+                <br>
             </div>
 
         </fieldset>

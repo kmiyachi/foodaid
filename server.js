@@ -33,12 +33,7 @@ var users = {
       "type": "Customer",
       "email": "semendez@ucsd.edu",
       "password": "1234",
-      "id": 1,
-      "location": {
-        "address": "9450 Gilman Drive",
-        "lat": "32.872471",
-        "long": "-117.235228"
-      }
+      "id": 1
     }
   ]
 };
@@ -80,7 +75,7 @@ app.post('/register', function (req, res) {
         "lastName": req.body.lastName,
         "email": req.body.email,
         "password": req.body.password,
-        "id": users.usersList.length
+        "id": (users.usersList.length + 1)
       }
   );
   res.redirect('/login');

@@ -32,11 +32,10 @@ html, body{
 }
 
 .profile-img-card {
-    width: 96px;
-    height: 96px;
+    width: 250px;
+    height: 120px;
     margin: 0 auto 10px;
     display: block;
-    border-radius: 50%;
 }
 
 /*

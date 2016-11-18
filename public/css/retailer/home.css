@@ -46,6 +46,10 @@ body {
 	background: aliceblue;
 }
 
+.radio {
+	margin-left: 40px;
+	margin-right: 40px;
+}
 .form-style-10{
 	padding:30px;
 	margin:40px auto;
@@ -66,13 +70,13 @@ body {
 .form-style-10 h1{
 	background: #2A88AD;
 	padding: 20px 30px 15px 30px;
-	margin: -30px -30px 30px -30px;
+	margin: -70px -30px 30px -30px;
 	border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
 	color: #fff;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
-	font: normal 30px 'Bitter', serif;
+	font: normal 28px 'Bitter', serif;
 	-moz-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
 	-webkit-box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
 	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);

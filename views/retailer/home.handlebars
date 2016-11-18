@@ -17,6 +17,7 @@
 <nav class="navbar navbar-default">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
+        <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -42,118 +43,48 @@
 <div class="container">
     <div class="form-style-10">
         <h1>Add a Deal to Food-Aid!<span>Fill out the information about your leftover food and start selling!</span></h1>
-        <form>
+        <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
             <div class="section"><span>1</span>First Name &amp; Address</div>
             <div class="inner-wrap">
-                <label>Your Full Name <input type="text" name="person_name" /></label>
-                <label>Restaurant <textarea name="restaurant_name"></textarea></label>
+                <label>Your Full Name <input id="person_name" type="text" name="person_name" /></label>
+                <label>Restaurant <input id="restaurant" type="text" name="restaurant" /></label>
             </div>
 
             <div class="section"><span>2</span>Food &amp; Deal</div>
             <div class="inner-wrap">
-                <label>Your Food <input type="text" name="food" /></label>
-                <label>Your Price in $<input type="text" name="price" /></label>
-                <label>Food Unit Metric<input type="text" name="measure" /></label><span>eg.lb,loaf,etc</span>
-                <label>Quantity of Food<input type="text" name="quantity" /></label>
-            </div>
-
-            <div class="section"><span>3</span>Passwords</div>
-            <div class="inner-wrap">
-                <label>Password <input type="password" name="field7" /></label>
-                <label>Confirm Password <input type="password" name="field8" /></label>
-            </div>
-            <div class="form-group">
-                <label class="col-md-4 control-label">Insert image of food:</label>
-                <!-- image-preview-filename input [CUT FROM HERE]-->
-                <div class="col-md-4">
-
-                    <div class="input-group image-preview">
-                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                        <span class="input-group-btn">
-                    <!-- image-preview-clear button -->
-                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                        <span class="glyphicon glyphicon-remove"></span> Clear
-                    </button>
-                            <!-- image-preview-input -->
-                    <div class="btn btn-default image-preview-input">
-                        <span class="glyphicon glyphicon-folder-open"></span>
-                        <span class="image-preview-input-title">Browse</span>
-                        <input type="file" accept="image/png, image/jpeg, image/gif" name="localImg"/> <!-- rename it -->
-                    </div>
-                </span>
-                    </div><!-- /input-group image-preview [TO HERE]-->
+                <label>Your Food <input id=food" type="text" name="food" /></label>
+                <label>Your Price in $<input id="price" type="text" name="price" /></label>
+                <label>Food Unit Metric<input id="measure" placeholder="lb, loaf, box, etc"type="text" name="measure" /></label>
+                <label>Quantity of Food<input id="quantity" type="number" name="quantity" /></label>
+                <div class="btn btn-default image-preview-input">
+                    <span class="glyphicon glyphicon-folder-open"></span>
+                    <span class="image-preview-input-title">Browse</span>
+                    <input type="file" accept="image/png, image/jpeg, image/gif" name="localImg"/> <!-- rename it -->
                 </div>
             </div>
-            <div class="button-section">
-                <input type="submit" name="Submit" />
+
+            <div class="section"><span>3</span>Featured Deal</div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <label class="radio">
+                                    <input type="radio" id="customerRadio" value="Yes" name="radio">Yes
+                                </label>
+                            </div>
+                            <div class="col-xs-6">
+                                <label class="radio">
+                                    <input type="radio" id="retailerRadio" value="No" name="radio">No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                </div>
             </div>
         </form>
-    </div>
-    <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
-
-        <!-- Form Name -->
-		<legend>Tell us about your food!</legend>
-
-        <!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Your name:</label>  
-		  <div class="col-md-4">
-		  <input id="person_name" name="owner" type="text" placeholder="Enter your name" class="form-control input-md">
-		  </div>
-		</div>
-
-		<!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Your restaurant name:</label>  
-		  <div class="col-md-4">
-		  <input id="restaurant" name="name" type="text" placeholder="Enter restaurant name" class="form-control input-md">
-		  </div>
-		</div>
-
-		<!-- Text input-->
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Your food:</label>  
-		  <div class="col-md-4">
-              <input id="food" name="offer" type="text" placeholder="Enter food name" class="form-control input-md">
-		  </div>
-		</div>
-
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Your price in dollars:</label>
-		  <div class="col-md-4">
-              <input id="price" name="price"  type="text" placeholder="Enter price" class="form-control input-md">
-		  </div>
-		</div>
-
-        <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">Your measure (e.g. lb, loaf, etc.):</label>
-            <div class="col-md-4">
-                <input id="price" name="measure"  type="text" placeholder="Enter measure" class="form-control input-md">
-            </div>
-        </div>
-
-		<div class="form-group">
-		  <label class="col-md-4 control-label" for="textinput">Quantity per food item:</label>  
-		  <div class="col-md-4">
-		  <input id="quantity" name="quantity" type="number" placeholder="Enter quantity" class="form-control input-md">
-		  </div>
-		</div>
-
-		<!-- Button -->
-        <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-		    <div class="col-md-4">
-                <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
-		    </div>
-		</div>
-
-		</form>
-
-    <div class="row">
-        <a class="active" href="options">Options</a>
-    </div>
-    <div class="row">
-        <a class="active" href="../../">Back</a>
     </div>
 </div>
 

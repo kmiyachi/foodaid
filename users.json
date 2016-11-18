@@ -23,8 +23,14 @@
       "email": "paul@ucsd.edu",
       "password": "1234",
       "id": 3
+    },
+    {
+      "firstName": "Calvin",
+      "lastName": "Calvin",
+      "type": "Customer",
+      "email": "calvin@ucsd.edu",
+      "password": "foodaid",
+      "id": 4
     }
-
-
   ]
 }

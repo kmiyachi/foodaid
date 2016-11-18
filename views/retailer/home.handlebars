@@ -10,6 +10,7 @@
 	<link href="/css/retailer/home.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="/js/retailer/home.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -39,6 +40,55 @@
     </div>
 </nav>
 <div class="container">
+    <div class="form-style-10">
+        <h1>Add a Deal to Food-Aid!<span>Fill out the information about your leftover food and start selling!</span></h1>
+        <form>
+            <div class="section"><span>1</span>First Name &amp; Address</div>
+            <div class="inner-wrap">
+                <label>Your Full Name <input type="text" name="person_name" /></label>
+                <label>Restaurant <textarea name="restaurant_name"></textarea></label>
+            </div>
+
+            <div class="section"><span>2</span>Food &amp; Deal</div>
+            <div class="inner-wrap">
+                <label>Your Food <input type="text" name="food" /></label>
+                <label>Your Price in $<input type="text" name="price" /></label>
+                <label>Food Unit Metric<input type="text" name="measure" /></label><span>eg.lb,loaf,etc</span>
+                <label>Quantity of Food<input type="text" name="quantity" /></label>
+            </div>
+
+            <div class="section"><span>3</span>Passwords</div>
+            <div class="inner-wrap">
+                <label>Password <input type="password" name="field7" /></label>
+                <label>Confirm Password <input type="password" name="field8" /></label>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label">Insert image of food:</label>
+                <!-- image-preview-filename input [CUT FROM HERE]-->
+                <div class="col-md-4">
+
+                    <div class="input-group image-preview">
+                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                        <span class="input-group-btn">
+                    <!-- image-preview-clear button -->
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+                    </button>
+                            <!-- image-preview-input -->
+                    <div class="btn btn-default image-preview-input">
+                        <span class="glyphicon glyphicon-folder-open"></span>
+                        <span class="image-preview-input-title">Browse</span>
+                        <input type="file" accept="image/png, image/jpeg, image/gif" name="localImg"/> <!-- rename it -->
+                    </div>
+                </span>
+                    </div><!-- /input-group image-preview [TO HERE]-->
+                </div>
+            </div>
+            <div class="button-section">
+                <input type="submit" name="Submit" />
+            </div>
+        </form>
+    </div>
     <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
 
         <!-- Form Name -->
@@ -87,30 +137,6 @@
 		  <div class="col-md-4">
 		  <input id="quantity" name="quantity" type="number" placeholder="Enter quantity" class="form-control input-md">
 		  </div>
-		</div>
-
-
-		<div class="form-group">
-		 <label class="col-md-4 control-label">Insert image of food:</label>
-            <!-- image-preview-filename input [CUT FROM HERE]-->
-            		  <div class="col-md-4">
-
-            <div class="input-group image-preview">
-                <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                <span class="input-group-btn">
-                    <!-- image-preview-clear button -->
-                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
-                        <span class="glyphicon glyphicon-remove"></span> Clear
-                    </button>
-                    <!-- image-preview-input -->
-                    <div class="btn btn-default image-preview-input">
-                        <span class="glyphicon glyphicon-folder-open"></span>
-                        <span class="image-preview-input-title">Browse</span>
-                        <input type="file" accept="image/png, image/jpeg, image/gif" name="localImg"/> <!-- rename it -->
-                    </div>
-                </span>
-            </div><!-- /input-group image-preview [TO HERE]--> 
-            </div>
 		</div>
 
 		<!-- Button -->

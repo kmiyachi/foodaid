@@ -69,8 +69,15 @@ app.get('/offers', function(req, res) {
 
 // Add customer routes
 app.get('/customer/home', function(req, res){
+  data['showAlternate']	=	false;
   res.render('customer/home', offers);
 });
+
+app.get('/customer/home2', function(req,res){
+  data['showAlternate']	=	true;
+  res.render('customer/home2', offers);
+});
+
 app.get('/customer/deal', deal.view);
 app.get('/customer/order-summary', orderSummary.view);
 app.get('/customer/map', map.view);

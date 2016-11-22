@@ -37,6 +37,7 @@ ul {
     position: relative;
     float: left;
     margin: 5px 0;
+    border-radius: 5px;
 }
 
 .mid h2 {
@@ -60,3 +61,22 @@ ul {
     transform: translate(-50%, -50%);
 }
 
+
+.feature {
+    margin-top: 0px;
+    vertical-align: top;
+    text-align:center;
+    height: 35px;
+    background-color: rgba(66,139,202,0.7);
+    border: 1px solid black;
+    border-radius: 5px;
+    text-emphasis-color: white;
+}
+
+h3 {
+    color: white;
+    opacity: 1;
+    margin-top: 2px;
+    vertical-align: top;
+    text-align:center;
+}

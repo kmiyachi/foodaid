@@ -20,7 +20,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/customer/home">FoodAid</a>
+            <a class="navbar-brand" href="/">FoodAid</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,17 +50,37 @@
         </div>
         <ul class="list">
             {{#each offers}}
-                <li>
-                    <div class="col-sm-6 col-md-4">
-                        <a href={{link}}>
-                            <div class="card mid deal"
-                                 style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{local-img}})">
-                                <h2 class="company-name">{{name}}</h2>
-                                <p><span class="wait-time">{{wait-time}}</span> * <span class="company-offer">{{offer}}</span></p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
+                {{#if feature}}
+                    <li>
+                        <div class="col-sm-6 col-md-4">
+                            <a href={{link}}>
+                                <div class="card mid deal"
+                                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{local-img}})">
+                                    <div class="feature">
+                                        <h3>Feature</h3>
+                                    </div>
+                                    <h2 class="fuck">{{name}}</h2>
+                                    <p><span class="please">{{wait-time}}</span> * <span class="work">{{offer}}</span></p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                {{/if}}
+            {{/each}}
+            {{#each offers}}
+                {{#unless feature}}
+                    <li>
+                        <div class="col-sm-6 col-md-4">
+                            <a href={{link}}>
+                                <div class="card mid deal"
+                                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{local-img}})">
+                                    <h2 class="company-name">{{name}}</h2>
+                                    <p><span class="wait-time">{{wait-time}}</span> * <span class="company-offer">{{offer}}</span></p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                {{/unless}}
             {{/each}}
         </ul>
 

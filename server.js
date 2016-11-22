@@ -71,6 +71,12 @@ app.get('/offers', function(req, res) {
 app.get('/customer/home', function(req, res){
     res.render('customer/home', offers);
 });
+
+app.get('/customer/home2', function(req,res){
+  data['showAlternate']	=	true;
+  res.render('customer/home2', offers);
+});
+
 app.get('/customer/deal', deal.view);
 app.get('/customer/order-summary', orderSummary.view);
 app.get('/customer/map', map.view);
@@ -157,6 +163,15 @@ function createNewOffer(req, res) {
         return;
     }
 
+    var feature;
+    if(req.body.radio == 'YES') {
+        var offer = _.find(offers.offers, {'feature': true});
+        offer.feature = false;
+        console.log(offer);
+        feature = true;
+    }
+
+
     offers.offers.push({
         "owner": req.body.owner,
         "name": req.body.name,
@@ -167,7 +182,8 @@ function createNewOffer(req, res) {
         "price-per-unit": "$" + req.body.price + ".00/" + req.body.measure,
         "quantity": parseInt(req.body.quantity),
         "img": "http://lorempixel.com/400/200/food",
-        "local-img": "http://lorempixel.com/400/200/food"
+        "local-img": "http://lorempixel.com/400/200/food",
+        "feature": feature
     });
     res.redirect('/customer/home');
 };
@@ -178,10 +194,7 @@ function checkNewOfferRequest(req){
         req.body.offer && req.body.price &&
         req.body.measure && req.body.quantity &&
         req.body.radio) {
-
-        console.log(req.body);
         return true;
-
     }
     return false;
 }

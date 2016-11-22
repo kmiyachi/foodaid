@@ -46,16 +46,16 @@
         <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
             <div class="section"><span>1</span>First Name &amp; Address</div>
             <div class="inner-wrap">
-                <label>Your Full Name <input id="person_name" type="text" name="person_name" /></label>
-                <label>Restaurant <input id="restaurant" type="text" name="restaurant" /></label>
+                <label>Your Full Name<span class="required">*</span><input id="person_name" type="text" name="owner" /></label>
+                <label>Restaurant<span class="required">*</span><input id="restaurant" type="text" name="name" /></label>
             </div>
 
             <div class="section"><span>2</span>Food &amp; Deal</div>
             <div class="inner-wrap">
-                <label>Your Food <input id=food" type="text" name="food" /></label>
-                <label>Your Price in $<input id="price" type="text" name="price" /></label>
-                <label>Food Unit Metric<input id="measure" placeholder="lb, loaf, box, etc"type="text" name="measure" /></label>
-                <label>Quantity of Food<input id="quantity" type="number" name="quantity" /></label>
+                <label>Your Food<span class="required">*</span><input id=food" type="text" name="offer" /></label>
+                <label>Your Price in $<span class="required">*</span><input id="price" type="text" name="price" /></label>
+                <label>Food Unit Metric<span class="required">*</span><input id="price-per-unit" name="measure" placeholder="lb, loaf, box, etc"type="text" name="measure" /></label>
+                <label>Quantity of Food<span class="required">*</span><input id="quantity" type="number" name="quantity" /></label>
                 <div class="btn btn-default image-preview-input">
                     <span class="glyphicon glyphicon-folder-open"></span>
                     <span class="image-preview-input-title">Browse</span>
@@ -64,20 +64,20 @@
             </div>
 
             <div class="section"><span>3</span>Featured Deal</div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <label class="radio">
-                                    <input type="radio" id="customerRadio" value="Yes" name="radio">Yes
-                                </label>
-                            </div>
-                            <div class="col-xs-6">
-                                <label class="radio">
-                                    <input type="radio" id="retailerRadio" value="No" name="radio">No
-                                </label>
-                            </div>
-                        </div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>
+                            <input type="radio" id="customerRadio" name="radio" style="margin-right: 5px">Yes
+                        </label>
                     </div>
+                    <div class="col-xs-6">
+                        <label>
+                            <input type="radio" id="retailerRadio" name="radio" style="margin-right: 5px"/>No
+                        </label>
+                    </div>
+                </div>
+            </div>
             <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4">

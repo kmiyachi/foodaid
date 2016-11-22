@@ -47,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 //Re-routing to login st
 app.get('/', function (req, res) {
-  res.redirect('/login');
+    res.redirect('/login');
 });
 
 // Add routes here
@@ -61,15 +61,15 @@ app.get('/paymentinfo', paymentinfo.view);
 
 // Routes to see current state of database
 app.get('/users', function(req, res) {
-  res.send(users);
+    res.send(users);
 });
 app.get('/offers', function(req, res) {
-  res.send(offers);
+    res.send(offers);
 });
 
 // Add customer routes
 app.get('/customer/home', function(req, res){
-  res.render('customer/home', offers);
+    res.render('customer/home', offers);
 });
 app.get('/customer/deal', deal.view);
 app.get('/customer/order-summary', orderSummary.view);
@@ -85,92 +85,145 @@ app.get('/retailer/confirmation', retailerConfirmation.view);
 
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+    console.log('Express server listening on port ' + app.get('port'));
 });
 
 
 //Helper functions
 function login(req, res) {
-  var email = req.body.email;
-  var passw = req.body.password;
-  var retailer = req.body.retailer === 'on';
-  var user = _.find(users.usersList, {'email': email, 'password': passw});
-  if(user && retailer)
-    res.redirect('/retailer/home');
-  else if(user)
-    res.redirect('/customer/home');
-  else
-    res.redirect('/login');
+    var email = req.body.email;
+    var passw = req.body.password;
+    var user = _.find(users.usersList, {'email': email, 'password': passw});
+    console.log(user);
+    if(user && user.type === 'Customer')
+        res.redirect('/customer/home');
+    else if(user && user.type === 'Retailer')
+        res.redirect('/retailer/home');
+    else if(user)
+        //alert('ERROR. User is neither Customer nor Retailer!!!');
+        console.log('ERROR. User is neither Customer nor Retailer');
+    else
+        res.redirect('/login');
 }
 
 function registerNewUser(req, res) {
-  users.usersList.push(
-      {
-        "firstName": req.body.firstName,
-        "lastName": req.body.lastName,
-        "email": req.body.email,
-        "password": req.body.password,
-        "id": (users.usersList.length + 1)
-      }
-  );
-  res.redirect('/login');
+    if(checkUniqueness(req.body)) {
+        console.log('Username or email already exists. Try ' + req.body.username + '8');
+        return;
+    }
+
+    if(!checkNewUserRequest(req)) {
+        //console.log(req.body);
+        console.log('Please fill all required fields');
+        return;
+    }
+
+    users.usersList.push(
+        {
+            "firstName": req.body.firstName,
+            "lastName": req.body.lastName,
+            "username": req.body.username,
+            "type": req.body.radio,
+            "email": req.body.email,
+            "password": req.body.password,
+            "id": (users.usersList.length + 1)
+        }
+    );
+
+    login(req, res);
+}
+
+function checkUniqueness(body) {
+    return _.find(users.usersList, {'username': body.username}) ||
+        _.find(users.usersList, {'email': body.email})
+}
+
+function checkNewUserRequest(req){
+    if(req.body.radio && req.body.firstName &&
+        req.body.lastName && req.body.username &&
+        req.body.email && req.body.password &&
+        req.body.confirmPassword && req.body.checkbox === 'on') {
+
+        if(req.body.password === req.body.confirmPassword)
+            return true;
+
+    }
+    return false;
 }
 
 function createNewOffer(req, res) {
-  console.log(req.body.localImg);
-  offers.offers.push({
-    "owner": req.body.owner,
-    "name": req.body.name,
-    "id": offers.offers.length + 1,
-    "wait-time": "35-50 min",
-    "offer": req.body.offer,
-    "price": parseInt(req.body.price),
-    "price-per-unit": "$" + req.body.price + ".00/" + req.body.measure,
-    "quantity": parseInt(req.body.quantity),
-    "img": "http://images.indianexpress.com/2016/05/breads_759_thinkstockphotos-484163886.jpg",
-    "local-img": "/images/food-bread.jpg"
-  });
-  res.redirect('/customer/home');
+    if(!checkNewOfferRequest(req)) {
+        console.log('Please fill all required fields');
+        return;
+    }
+
+    offers.offers.push({
+        "owner": req.body.owner,
+        "name": req.body.name,
+        "id": offers.offers.length + 1,
+        "wait-time": "35-50 min",
+        "offer": req.body.offer,
+        "price": parseInt(req.body.price),
+        "price-per-unit": "$" + req.body.price + ".00/" + req.body.measure,
+        "quantity": parseInt(req.body.quantity),
+        "img": "http://lorempixel.com/400/200/food",
+        "local-img": "http://lorempixel.com/400/200/food"
+    });
+    res.redirect('/customer/home');
 };
+
+
+function checkNewOfferRequest(req){
+    if(req.body.owner && req.body.name &&
+        req.body.offer && req.body.price &&
+        req.body.measure && req.body.quantity &&
+        req.body.radio) {
+
+        console.log(req.body);
+        return true;
+
+    }
+    return false;
+}
 
 /*var url = 'mongodb://localhost:27017/myproject';
 
-var insertDocuments = function(db, callback) {
-  // Get the documents collection
-  var collection = db.collection('documents');
-  // Insert some documents
-  collection.insertMany([
-    {a : 1}, {a : 2}, {a : 3}
-  ], function(err, result) {
-    assert.equal(err, null);
-    assert.equal(3, result.result.n);
-    assert.equal(3, result.ops.length);
-    console.log("Inserted 3 documents into the collection");
-    callback(result);
-  });
-};
+ var insertDocuments = function(db, callback) {
+ // Get the documents collection
+ var collection = db.collection('documents');
+ // Insert some documents
+ collection.insertMany([
+ {a : 1}, {a : 2}, {a : 3}
+ ], function(err, result) {
+ assert.equal(err, null);
+ assert.equal(3, result.result.n);
+ assert.equal(3, result.ops.length);
+ console.log("Inserted 3 documents into the collection");
+ callback(result);
+ });
+ };
 
-var findDocuments = function(db, callback) {
-  // Get the documents collection
-  var collection = db.collection('documents');
-  // Find some documents
-  collection.find({}).toArray(function(err, docs) {
-    assert.equal(err, null);
-    console.log("Found the following records");
-    console.log(docs);
-    callback(docs);
-  });
-};
+ var findDocuments = function(db, callback) {
+ // Get the documents collection
+ var collection = db.collection('documents');
+ // Find some documents
+ collection.find({}).toArray(function(err, docs) {
+ assert.equal(err, null);
+ console.log("Found the following records");
+ console.log(docs);
+ callback(docs);
+ });
+ };
 
-// Use connect method to connect to the server
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  console.log("Connected successfully to server");
+ // Use connect method to connect to the server
+ MongoClient.connect(url, function(err, db) {
+ assert.equal(null, err);
+ console.log("Connected successfully to server");
 
-  insertDocuments(db, function() {
-    findDocuments(db, function () {
-      db.close();
-    });
-  });
-});*/
+ insertDocuments(db, function() {
+ findDocuments(db, function () {
+ db.close();
+ });
+ });
+ });*/
 

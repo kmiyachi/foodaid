@@ -15,18 +15,28 @@ function initializePage() {
     clickOffer();
     sortByActiveTab();
     setActiveTab();
+    clickFeature();
 }
 
 function clickOffer() {
     $(".deal").on('click', function (e) {
         e.preventDefault();
-
         var companyName = $(this).find(".company-name").text();
         var companyOffer = $(this).find(".company-offer").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
+        ga('send', 'event', 'feat', 'yes');
     });
 }
 
+
+function clickFeature() {
+    $(".feat").on('click',function(e) {
+        var companyName = $(this).find(".please").text();
+        var companyOffer = $(this).find(".work").html();
+        location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
+        console.log("FUCK");
+    });
+}
 function sortByActiveTab() {
     $("li.active > a.sort").click();
 }

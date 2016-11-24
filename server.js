@@ -73,7 +73,7 @@ app.get('/customer/home', function(req, res){
 });
 
 app.get('/customer/home2', function(req,res){
-  data['showAlternate']	=	true;
+  //data['showAlternate']	=	true;
   res.render('customer/home2', offers);
 });
 

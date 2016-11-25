@@ -21,9 +21,9 @@ function initializePage() {
 function clickOffer() {
     $(".deal").on('click', function (e) {
         e.preventDefault();
-        var companyName = $(this).find(".company-name").text();
-        var companyOffer = $(this).find(".company-offer").html();
 
+        var companyName = $(this).find(".company-name").text() || $(this).find(".please").text();
+        var companyOffer = $(this).find(".company-offer").html() || $(this).find(".work").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
         ga('send', 'event', 'feat', 'yes');
     });

@@ -28,7 +28,11 @@ function clickOffer() {
             console.log("WORKING");
             ga('send', 'event', 'feat', 'yes');
         }
-        ga('send','event', 'feat', 'no')
+        else {
+            console.log("Sending a NO");
+            ga('send','event', 'feat', 'no');
+        }
+
     });
 }
 

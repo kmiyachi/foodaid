@@ -21,11 +21,13 @@ function initializePage() {
 function clickOffer() {
     $(".deal").on('click', function (e) {
         e.preventDefault();
-
         var companyName = $(this).find(".company-name").text() || $(this).find(".please").text();
         var companyOffer = $(this).find(".company-offer").html() || $(this).find(".work").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
-        ga('send', 'event', 'feat', 'yes');
+        if (companyOffer == "burger" && companyName == "in-n-out") {
+            console.log("WORKING");
+            ga('send', 'event', 'feat', 'yes');
+        }
     });
 }
 
@@ -36,8 +38,11 @@ function clickFeature() {
         var companyOffer = $(this).find(".work").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
         console.log("FUCK");
+        ga('send', 'event', 'feat', 'yes');
     });
 }
+
+
 function sortByActiveTab() {
     $("li.active > a.sort").click();
 }

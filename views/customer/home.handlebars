@@ -70,7 +70,7 @@
                         {{#if feature}}
                             <a href={{link}}>
                                 <div class="card mid deal ftest"
-                                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{local-img}})">
+                                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url({{local-img}})" onclick="ftest()">
                                     <h2 class="company-name">{{name}}</h2>
                                     <p><span class="wait-time">{{wait-time}}</span> * <span class="company-offer">{{offer}}</span></p>
                                 </div>
@@ -111,7 +111,7 @@
 
     ga('create', 'UA-87196704-1', 'auto');
     ga('send', 'pageview');
-    ga('send', 'event', 'ftest', 'yes');
+
 
 </script>
 

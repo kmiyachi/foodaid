@@ -28,6 +28,7 @@ function clickOffer() {
             console.log("WORKING");
             ga('send', 'event', 'feat', 'yes');
         }
+        ga('send','event', 'feat', 'no')
     });
 }
 

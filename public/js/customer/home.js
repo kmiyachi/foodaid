@@ -25,7 +25,7 @@ function clickOffer() {
         var companyOffer = $(this).find(".company-offer").html() || $(this).find(".work").html();
         location.href = "/customer/deal?name=" + companyName + "&offer=" + companyOffer;
         if (companyOffer == "burger" && companyName == "in-n-out") {
-            console.log("WORKING");
+            console.log("Sending a Yes");
             ga('send', 'event', 'feat', 'yes');
         }
         else {
@@ -36,7 +36,7 @@ function clickOffer() {
     });
 }
 
-
+/*
 function clickFeature() {
     $(".feat").on('click',function(e) {
         var companyName = $(this).find(".please").text();
@@ -46,7 +46,7 @@ function clickFeature() {
         ga('send', 'event', 'feat', 'yes');
     });
 }
-
+*/
 
 function sortByActiveTab() {
     $("li.active > a.sort").click();

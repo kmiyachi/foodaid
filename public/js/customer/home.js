@@ -15,7 +15,7 @@ function initializePage() {
     clickOffer();
     sortByActiveTab();
     setActiveTab();
-    clickFeature();
+    //clickFeature();
 }
 
 function clickOffer() {

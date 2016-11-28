@@ -89,7 +89,6 @@ app.get('/retailer/options',retailerOptions.view);
 app.get('/retailer/verification',retailerVerification.view);
 app.get('/retailer/confirmation', retailerConfirmation.view);
 
-
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
 });
@@ -185,7 +184,8 @@ function createNewOffer(req, res) {
         "local-img": "http://lorempixel.com/400/200/food",
         "feature": feature
     });
-    res.redirect('/customer/home');
+    //res.redirect('/customer/home');
+    res.redirect('/retailer/options');
 };
 
 

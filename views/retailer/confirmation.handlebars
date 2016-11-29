@@ -67,17 +67,31 @@
                         <td id="total-box">{{quantity}}</td>
                     </tr>
                     <tr>
-                        <td>Feature: </td>
-                        <td id="total-box">{{feature}}</td>
-                    </tr>
-                    <tr>
                         <td>Profit Organization: </td>
                         <td id="total-box">{{profitOrg}}</td>
                     </tr>
-                    <tr>
-                        <td>Charity Organization: </td>
-                        <td id="total-box">{{donationOrg}}</td>
-                    </tr>
+                    {{#if donationOrg}}
+                        <tr>
+                            <td>Charity Organization: </td>
+                            <td id="total-box">{{donationOrg}}</td>
+                        </tr>
+                    {{else}}
+                        <tr>
+                            <td>Charity Organization: </td>
+                            <td id="total-box">None</td>
+                        </tr>
+                    {{/if}}
+                    {{#if feature}}
+                        <tr>
+                            <td>Featured Item: </td>
+                            <td id="total-box">Yes</td>
+                        </tr>
+                    {{else}}
+                        <tr>
+                            <td>Featured Item: </td>
+                            <td id="total-box">No</td>
+                        </tr>
+                    {{/if}}
                     </tbody>
                 </table>
             </div>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="/css/retailer/home.css" rel="stylesheet">
+    <link href="/css/retailer/confirmation.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,7 +21,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">FoodAid</a>
+            <a class="navbar-brand" href="options">
+                <span class="glyphicon glyphicon-arrow-left"></span>
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,52 +39,52 @@
     </div>
 </nav>
 <div class="container">
-    <div class="row">
         <h1>Offer Approved!</h1>
-        <h4>Order Details</h4>
-        <table class="table">
-            <tbody>
-            <tr class="active">
-                <th scope="row">1</th>
-                <td>Full Name</td>
-                <td>Ken Miyachi</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="success">
-                <th scope="row">3</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="info">
-                <th scope="row">5</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr class="warning">
-                <th scope="row">7</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            <tr>
-                <th scope="row">8</th>
-                <td>Column content</td>
-                <td>Column content</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        <a type="button" id="customer" href="info" class="btn btn-primary btn-block">Offer Metrics</a>
-    </div>
+        <div id="panel-row" class="row">
+            <div class="panel panel-default">
+                <div class="panel-heading title-box">Order Details</div>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Owner: </td>
+                        <td id="quantity-box">{{owner}}</td>
+                    </tr>
+                    <tr>
+                        <td>Restaurant: </td>
+                        <td id="price-box">{{name}}</td>
+                    </tr>
+                    <tr>
+                        <td>Product: </td>
+                        <td id="total-box">{{offer}}</td>
+                    </tr>
+                    <tr>
+                        <td>Price: </td>
+                        <td id="total-box">{{price-per-unit}}</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity: </td>
+                        <td id="total-box">{{quantity}}</td>
+                    </tr>
+                    <tr>
+                        <td>Feature: </td>
+                        <td id="total-box">{{feature}}</td>
+                    </tr>
+                    <tr>
+                        <td>Profit Organization: </td>
+                        <td id="total-box">{{profitOrg}}</td>
+                    </tr>
+                    <tr>
+                        <td>Charity Organization: </td>
+                        <td id="total-box">{{donationOrg}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <a type="button" id="customer" href="info" class="btn btn-info btn-block">Offer Metrics</a>
+
 </div>
 
 <script src="https://code.jquery.com/jquery.js"></script>

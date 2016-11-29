@@ -2,6 +2,7 @@
 
 var bodyParser = require('body-parser');
 var express = require('express');
+var cookieParser = require('cookie-parser');
 var handlebars = require('express3-handlebars');
 var http = require('http');
 var MongoClient = require('mongodb').MongoClient;
@@ -44,6 +45,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 //Re-routing to login st
 app.get('/', function (req, res) {
@@ -84,10 +86,11 @@ app.get('/customer/map', map.view);
 //Add retailer routes
 app.get('/retailer/home', retailerHome.view);
 app.post('/retailer/home', createNewOffer);
-app.get('/retailer/info',retailerInfo.view);
 app.get('/retailer/options',retailerOptions.view);
+app.post('/retailer/options', addOptionsToOffer);
 app.get('/retailer/verification',retailerVerification.view);
 app.get('/retailer/confirmation', retailerConfirmation.view);
+app.get('/retailer/info', retailerInfo.view);
 
 http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
@@ -99,12 +102,14 @@ function login(req, res) {
     var email = req.body.email;
     var passw = req.body.password;
     var user = _.find(users.usersList, {'email': email, 'password': passw});
-    console.log(user);
-    if(user && user.type === 'Customer')
+    if(user && user.type === 'Customer') {
+        res.cookie('username', user.username);
         res.redirect('/customer/home');
-    else if(user && user.type === 'Retailer')
+    }
+    else if(user && user.type === 'Retailer') {
+        res.cookie('username', user.username);
         res.redirect('/retailer/home');
-    else if(user)
+    } else if(user)
         //alert('ERROR. User is neither Customer nor Retailer!!!');
         console.log('ERROR. User is neither Customer nor Retailer');
     else
@@ -170,7 +175,6 @@ function createNewOffer(req, res) {
         feature = true;
     }
 
-
     offers.offers.push({
         "owner": req.body.owner,
         "name": req.body.name,
@@ -184,10 +188,32 @@ function createNewOffer(req, res) {
         "local-img": "http://lorempixel.com/400/200/food",
         "feature": feature
     });
-    //res.redirect('/customer/home');
-    res.redirect('/retailer/options');
-};
 
+    res.cookie('offerId', offers.offers.length);
+    res.redirect('/retailer/options');
+}
+
+function addOptionsToOffer(req, res) {
+    var id = parseInt(req.cookies.offerId);
+    var offer = _.find(offers.offers, {'id': id});
+
+    if(offer) {
+        if(req.body.radCharity) {
+            offer.donationOrg = req.body.radCharity;
+        } else {
+            offer.donationOrg = null;
+        }
+
+        if(req.body.radProfit) {
+            offer.profitOrg = req.body.radProfit;
+        } else {
+            offer.profitOrg = null;
+        }
+    }
+
+    if(offer.profitOrg)
+        res.render('retailer/confirmation', offer);
+}
 
 function checkNewOfferRequest(req){
     if(req.body.owner && req.body.name &&

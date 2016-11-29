@@ -8,16 +8,13 @@
 	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/retailer/home.css" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="/js/retailer/home.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body>
 <nav class="navbar navbar-default">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <form class="form-submit-offer" method="post" name="submit-offer" action="retailer/home">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
@@ -53,7 +50,7 @@
             <div class="section"><span>2</span>Food &amp; Deal</div>
             <div class="inner-wrap">
                 <label>Your Food<span class="required">*</span><input id=food" type="text" name="offer" /></label>
-                <label>Your Price in $<span class="required">*</span><input id="price" type="text" name="price" /></label>
+                <label>Your Price in $<span class="required">*</span><input id="price" type="number" name="price" /></label>
                 <label>Food Unit Metric<span class="required">*</span><input id="price-per-unit" name="measure" placeholder="lb, loaf, box, etc"type="text" name="measure" /></label>
                 <label>Quantity of Food<span class="required">*</span><input id="quantity" type="number" name="quantity" /></label>
                 <div class="btn btn-default image-preview-input">
@@ -81,7 +78,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4">
-                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                    <button type="submit" class="btn btn-info" id="submit-btn">Submit</button>
                 </div>
             </div>
         </form>
@@ -90,6 +87,7 @@
 
 <script src="https://code.jquery.com/jquery.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="/js/retailer/home.js"></script>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

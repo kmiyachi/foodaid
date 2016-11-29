@@ -21,9 +21,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="confirmation">
+            <button class="navbar-brand btn-go-back">
                 <span class="glyphicon glyphicon-arrow-left"></span>
-            </a>
+            </button>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -71,32 +71,29 @@
     </a>
 
 </div>
-<script src="https://code.jquery.com/jquery.js"></script>
+<script src="/js/jquery-1.11.0.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/Chart.js"></script>
 <script>
+    $('.btn-go-back').on('click', function () {
+        window.history.back();
+    })
 
     var ctx = $("#myChart");
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'pie',
         data: {
-            labels: ["Bread", "Sushi", "Fruit", "Burgers", "Fries"],
+            labels: ["Profit", "Charity"],
             datasets: [{
                 label: 'Profit in $',
-                data: [1000, 1500, 456, 234, 553],
+                data: [1500, 456],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
+                    'rgba(255, 206, 86, 0.2)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
                     'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
+                    'rgba(255, 206, 86, 1)'
                 ],
                 borderWidth: 1
             }]
